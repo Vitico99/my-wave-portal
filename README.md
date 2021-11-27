@@ -14,4 +14,4 @@ node scripts/sample-script.js
 npx hardhat help
 ```
 
-WavePortal address: 0x53Da3f656d85F50Eb4174E786890ABF1953eeeB0
+WavePortal address: 0x41B0D178f9d999151b0F8db1526016c1F116b576
