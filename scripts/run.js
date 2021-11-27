@@ -9,17 +9,22 @@ const main = async () => {
 
     let contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
     console.log(
+        'Contract balance: ',
         hre.ethers.utils.formatEther(contractBalance)
     );
     
-    let waveTxn = await waveContract.wave('A message!');
+    const waveTxn = await waveContract.wave('This is wave #1');
     await waveTxn.wait();
+
+    const waveTxn2 = await waveContract.wave('This is wave #2');
+    await waveTxn2.wait();
 
     contractBalance = await hre.ethers.provider.getBalance(waveContract.address);
     console.log(
+        'Contract balance: ',
         hre.ethers.utils.formatEther(contractBalance)
     );
-
+    
     let allWaves = await waveContract.getAllWaves();
     console.log(allWaves);
 };
@@ -34,4 +39,4 @@ const runMain = async () => {
     }
 };
 
-runMain();
+runMain(); 
